@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+ #!/usr/bin/python3
 
+print(str[39:67] + str[107:112] + str[:6])
 
-print(str[39:66] + str[-23:-17] + str[0:6])
