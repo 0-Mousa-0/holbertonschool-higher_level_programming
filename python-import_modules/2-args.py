@@ -6,6 +6,9 @@ if __name__ == "__main__":
     if len == 0:
         print(f"{len} arguments.")
         sys.exit(0)
+    elif len == 1:
+        print("1 argument:")
+        print("1: {}".format(sys.argv[1]))
     else:
         print(f"{len} arguments:")
         while i <= len:
