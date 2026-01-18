@@ -5,6 +5,6 @@ def print_matrix_integer(matrix=[[]]):
         for i, num in enumerate(row):
             if not num:
                 print("")
-            print("{:d}".format(num), end=" ")
+            print("{:d}".format(num), sep="", end=" ")
             i += 1
         print()
