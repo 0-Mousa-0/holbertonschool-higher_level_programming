@@ -3,8 +3,8 @@ def print_matrix_integer(matrix=[[]]):
 
     for row in matrix:
         for i, num in enumerate(row):
-            if not num:
-                print("")
-            print("{:d}".format(num), sep="", end=" ")
+            if i != 0:
+                print(" ", end="")
+            print("{:d}".format(num), end="")
             i += 1
         print()
