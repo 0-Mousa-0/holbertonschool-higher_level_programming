@@ -24,3 +24,5 @@ def text_indentation(text):
                 continue
             else:
                 line += char
+        if line:
+            print(line, end="")
