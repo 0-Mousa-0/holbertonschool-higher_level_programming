@@ -11,12 +11,16 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    line = ""
     if isinstance(text, str):
         for char in text:
             if char == "." or char == "?" or char == ":":
-                print(char + "$")
-                print("$")
+                line += char
+                print(line, end="\n\n")
+                line = ""
             elif char == '"':
                 pass
+            elif not line and char == " ":
+                continue
             else:
-                print(char, end="")
+                line += char
