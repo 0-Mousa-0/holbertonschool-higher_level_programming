@@ -11,10 +11,14 @@ def add_integer(a, b=98):
     a and b must be integers or floats
     Returns an integer
     """
-    if not isinstance(a, (int, float)) or a == float('inf' or '-inf') or a != a:
+    if not isinstance(a, (int, float)) or a != a:
+        raise TypeError("a must be an integer")
+    if a in (float("inf"), float("-inf")):
         raise TypeError("a must be an integer")
 
-    if not isinstance(b, (int, float)) or b == float('inf' or '-inf') or b != b:
+    if not isinstance(b, (int, float)) or b != b:
+        raise TypeError("b must be an integer")
+    if b in (float("inf"), float("-inf")):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
