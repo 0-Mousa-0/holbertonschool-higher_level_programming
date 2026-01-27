@@ -10,7 +10,18 @@ class Square:
         :param size: the value of it
         :return: size amount
         """
-        self.size = size
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+
+    def area(self):
+        """
+        :return: area amount
+        """
+        return self.__size * self.__size
 
     @property
     def size(self):
@@ -33,9 +44,3 @@ class Square:
         self.__size = value
 
         return self.__size
-
-    def area(self):
-        """
-        :return: area amount
-        """
-        return self.__size * self.__size
