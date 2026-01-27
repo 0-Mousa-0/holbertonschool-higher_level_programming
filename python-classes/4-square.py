@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Defines a Square class with size validation."""
+
+
 class Square:
     """
     first use of property
