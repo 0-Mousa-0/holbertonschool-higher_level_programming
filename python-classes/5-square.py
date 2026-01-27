@@ -5,6 +5,7 @@ print square upon the size
 
 
 class Square:
+    """print rectangle use property & setter"""
     def __init__(self, size=0):
         """
         :param size: of rectangle
