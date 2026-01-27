@@ -1,89 +1,67 @@
 #!/usr/bin/python3
-"""
-print square upon the size
-"""
+"""Defines a Square class with size validation."""
 
 
 class Square:
     """
-    print rectangle use property & setter
+    Represents a square with a private size attribute.
     """
 
     def __init__(self, size=0, position=(0, 0)):
-        """
-        :param size: of rectangle
-        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        if not isinstance(position, tuple):
-            raise TypeError("position must be a tuple")
-        if position[0] < 0:
-            raise ValueError("position must be >= 0")
+        if not isinstance(position, tuple) or len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
-
+        if not all(isinstance(x, int) and x >= 0 for x in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
     def area(self):
-        """
-
-        :return: area of the rectangle
-        """
+        """Calculates the area of the square."""
         return self.__size**2
 
     @property
     def size(self):
-        """
-        :return: the setted size
-        """
+        """Getter for the size attribute."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        :param value: SIZE SET
-        :return: NONE
-        """
+        """Setter for the size attribute with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
     @property
     def position(self):
-        """
-        :return: how much spaces
-        """
+        """Getter for the position attribute."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """
-        :param value: positions
-        :return: result to getter
-        """
-        if not isinstance(value, tuple):
-            raise TypeError("position must be a tuple")
-        if value[0] < 0:
-            raise ValueError("position must be >= 0")
-        else:
-            self.__position = value
+        """Setter for the position attribute with validation."""
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        if not all(isinstance(x, int) and x >= 0 for x in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def my_print(self):
         """
-
-        :return:print of rectangle
+        Prints the square using the '#' character.
         """
         if self.__size == 0:
             print()
-        if self.__position[0] == 0:
-            for i in range(self.__size):
-                print("#" * self.__size)
         else:
-
+            for i in range(self.__position[1]):
+                print()
             for i in range(self.__size):
-                print(" " * self.__position[0], "#" * self.__size)
+                lien = " " * self.__position[0] + "#" * self.__size
+                print(lien)
