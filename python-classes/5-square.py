@@ -20,6 +20,13 @@ class Square:
         else:
             self.__size = size
 
+    def area(self):
+        """
+
+        :return: area of the rectangle
+        """
+        return self.__size**2
+
     @property
     def size(self):
         """
@@ -39,13 +46,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
-    def area(self):
-        """
-
-        :return: area of the rectangle
-        """
-        return self.__size**2
 
     def my_print(self):
         """
