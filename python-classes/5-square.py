@@ -5,7 +5,10 @@ print square upon the size
 
 
 class Square:
-    """print rectangle use property & setter"""
+    """
+    print rectangle use property & setter
+    """
+
     def __init__(self, size=0):
         """
         :param size: of rectangle
@@ -53,6 +56,4 @@ class Square:
             print("\n")
         else:
             for i in range(self.__size):
-                for j in range(self.__size):
-                    print("#", end="")
-                print()
+                print("#" * self.__size)
