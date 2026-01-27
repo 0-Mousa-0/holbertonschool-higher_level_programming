@@ -10,7 +10,7 @@ class Square:
         :param size: the value of it
         :return: size amount
         """
-        self._size = size
+        self.size = size
 
     @property
     def size(self):
@@ -18,7 +18,7 @@ class Square:
 
         :return: size amount
         """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -30,12 +30,12 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self._size = value
+        self.__size = value
 
-        return self._size
+        return self.__size
 
     def area(self):
         """
         :return: area amount
         """
-        return self._size * self._size
+        return self.__size * self.__size
