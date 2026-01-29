@@ -8,8 +8,9 @@ class Rectangle:
     """
     Docstring for Rectangle
     """
+
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         if not isinstance(width, int):
@@ -27,20 +28,20 @@ class Rectangle:
     @property
     def width(self):
         """
-                Docstring for width
+        Docstring for width
 
-                :param self: Description
-                """
+        :param self: Description
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-                Docstring for width
+        Docstring for width
 
-                :param self: Description
-                :param value: Description
-                """
+        :param self: Description
+        :param value: Description
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -50,20 +51,20 @@ class Rectangle:
     @property
     def height(self):
         """
-                Docstring for height
+        Docstring for height
 
-                :param self: Description
-                """
+        :param self: Description
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-                Docstring for width
+        Docstring for width
 
-                :param self: Description
-                :param value: Description
-                """
+        :param self: Description
+        :param value: Description
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -84,7 +85,7 @@ class Rectangle:
             return ""
         else:
             printt = str(self.print_symbol) * self.width
-        return '\n'.join([printt] * self.height)
+        return "\n".join([printt] * self.height)
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.__width}, {self.__height})"
