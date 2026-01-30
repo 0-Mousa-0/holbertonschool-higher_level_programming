@@ -3,8 +3,12 @@
 
 
 def inherits_from(obj, a_class):
-    """look for another form of inheritance"""
-    if isinstance(obj, a_class) and not type(obj) == a_class:
+    """
+
+    :param obj:to look for his inherited classes
+    :param a_class: class that obj belongs to
+    :return: boolean
+    """
+    if isinstance(obj, a_class) and type(obj) is not a_class:
         return True
-    else:
-        return False
+    return False
