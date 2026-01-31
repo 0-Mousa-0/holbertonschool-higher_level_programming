@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""inheritance for abc class"""
-
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """our abc class"""
-
     @abstractmethod
     def area(self):
         pass
@@ -18,62 +14,28 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-    """inherit from Shape"""
-
-    def __init__(self, radius=0):
-        """
-
-        :param radius:value
-        """
+    def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        """
-
-        :return: result
-        """
-        return math.pi * (self.radius**2)
+        return abs(self.radius * self.radius) * math.pi
 
     def perimeter(self):
-        """
-
-        :return: result
-        """
-        return self.radius * 2 * math.pi
+        return math.pi * abs(self.radius) * 2
 
 
 class Rectangle(Shape):
-    """inherit from Shape"""
-
-    def __init__(self, width=0, height=0):
-        """
-
-        :param width: value
-        :param height: value
-        """
+    def __init__(self, width, height):
         self.width = width
         self.height = height
 
     def area(self):
-        """
-
-        :return: result
-        """
         return self.width * self.height
 
     def perimeter(self):
-        """
-
-        :return: result
-        """
-        return 2 * (self.width + self.height)
+        return (self.width + self.height) * 2
 
 
-def shape_info(Shape):
-    """
-
-    :param Shape: abc class
-    :return: print of infos
-    """
-    print(f"Area: {Shape.area()}")
-    print(f"Perimeter: {Shape.perimeter()}")
+def shape_info(shape):
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
