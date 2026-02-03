@@ -5,7 +5,7 @@ import sys
 load = __import__("6-load_from_json_file").load
 dump = __import__("5-save_to_json_file").dump
 
-filename = sys.argv[0]
+filename = "add_item.json"
 
 try:
     my_list = load(filename)
