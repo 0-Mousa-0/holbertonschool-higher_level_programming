@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-"""json representation saved in a file"""
+"""Load, add, save"""
 import sys
 
-load = __import__("6-load_from_json_file").load
-dump = __import__("5-save_to_json_file").dump
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 filename = "add_item.json"
 
 try:
-    my_list = load(filename)
-except Exception as e:
+    my_list = load_from_json_file(filename)
+except Exception:
     my_list = []
 
 my_list.extend(sys.argv[1:])
-dump(my_list)
+
+save_to_json_file(my_list, filename)
