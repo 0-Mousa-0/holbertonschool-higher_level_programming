@@ -112,6 +112,36 @@ Lists all shows, including those without genres:
 
 Uses one `SELECT` with `LEFT JOIN` and sorts by title, then genre ID.
 
+### 12-no_genre.sql
+Lists only shows that do not have any linked genre:
+
+- `tv_shows.title`
+- `tv_show_genres.genre_id` (always `NULL` in this result)
+
+Uses one `SELECT` with `LEFT JOIN`, filters on `NULL`, and sorts by title, then genre ID.
+
+### 13-count_shows_by_genre.sql
+Lists all genres that have at least one linked show and displays:
+
+- `genre` (alias of `tv_genres.name`)
+- `number_of_shows` (count of linked shows)
+
+Uses one `SELECT`, `INNER JOIN`, and `GROUP BY`, sorted by `number_of_shows` descending.
+
+### 14-my_genres.sql
+Lists every genre linked to the show `Dexter` and sorts genre names ascending.
+
+### 15-comedy_only.sql
+Lists all show titles linked to the `Comedy` genre and sorts titles ascending.
+
+### 16-shows_by_genre.sql
+Lists all shows with all linked genres:
+
+- `tv_shows.title`
+- `tv_genres.name`
+
+If a show has no genre, the genre column is `NULL`. Results are sorted by title, then genre name.
+
 ---
 
 ## Notes
