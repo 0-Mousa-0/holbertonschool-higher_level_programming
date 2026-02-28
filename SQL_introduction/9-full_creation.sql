@@ -1,3 +1,5 @@
+-- Create a table named `second_table` with three columns: `id`, `name`, and `score`.
+
 CREATE TABLE IF NOT EXISTS second_table (
     id INT,
     name VARCHAR(256),
