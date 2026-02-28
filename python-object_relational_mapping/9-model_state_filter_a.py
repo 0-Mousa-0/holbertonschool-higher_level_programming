@@ -22,7 +22,11 @@ if __name__ == "__main__":
     session = Session()
 
     # Filter state names that contain lowercase 'a'.
-    states = session.query(State).filter(State.name.like("%a%")).order_by(State.id)
+    states = (
+        session.query(State)
+        .filter(State.name.like("%a%"))
+        .order_by(State.id)
+    )
     for state in states:
         print("{}: {}".format(state.id, state.name))
 
