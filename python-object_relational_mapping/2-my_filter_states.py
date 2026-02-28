@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # Required by task: build query using format with user input.
     query = (
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
     ).format(sys.argv[4])
     cursor.execute(query)
     for state in cursor.fetchall():
