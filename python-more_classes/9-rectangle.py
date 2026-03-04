@@ -111,6 +111,10 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+<<<<<<< HEAD
         """cls the square of the rectangle"""
+=======
+        """clc the square of the rectangle"""
+>>>>>>> a2fdb4a9e5f570e213b2dbac71c444e23b324593
 
         return cls(size, size)

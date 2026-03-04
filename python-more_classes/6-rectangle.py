@@ -80,7 +80,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2fdb4a9e5f570e213b2dbac71c444e23b324593
             printt = "#" * self.width
         return "\n".join([printt] * self.height)
 
